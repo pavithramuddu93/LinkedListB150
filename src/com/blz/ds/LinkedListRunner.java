@@ -6,9 +6,9 @@ public class LinkedListRunner {
         LinkedList linkedList = new LinkedList();
 
         linkedList.display();
-        linkedList.addLast(56);
-        linkedList.addLast(30);
-        linkedList.addLast(70);
+        linkedList.addFirst(70);
+        linkedList.addFirst(30);
+        linkedList.addFirst(56);
 
         linkedList.display();
 
