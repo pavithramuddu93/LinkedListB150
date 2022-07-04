@@ -2,60 +2,49 @@ package com.blz.ds;
 
 public class LinkedList {
 
-    Node head;
+	Node head; // null
 
-    class Node {
-        Object data;
-        Node next;
+	class Node {
+		Object data; // int, double,long....etc
+		Node next;
 
-        public Node(Object data) {
-            this.data = data;
-        }
+		public Node(Object data) { // constructor
+			this.data = data;
+		}
 
-    }
+	}
 
-    public void addLast(Object data) {
-        Node newNode = new Node(data);
+	public void addFirst(Object data) {
+		Node newNode = new Node(data); // Creating new node
 
-        if (head == null)
-            head = newNode;
-        else {
-            Node temp = head;
+		if (head == null)
+			head = newNode; // linked list is empty then add directly
+		else {
+			Node temp = head; // it not empty copy to temp node
+			head = newNode;
+			head.next = temp;
+		}
 
-            while (temp.next != null) {
-                temp = temp.next;
-            }
+	}
 
-            temp.next = newNode;
+	public void display() {
 
-        }
+		if (head == null) {
+			System.out.println("No elements to display");
+		} else if (head.next == null)
+			System.out.println(head.data);
 
-    }
+		else {
+			Node temp = head;
+			while (temp != null) {
+				if (temp.next != null)
+					System.out.print(temp.data + "->");
+				else
+					System.out.println(temp.data + "\n");
 
-
-
-    public void display() {
-        /*
-         * []==> No elements to display.. head==> temp=>[10 | null] [10 | ref20]
-         * ==> [20 | ref 30] ==> [30 | null]
-         */
-
-        if (head == null)
-            System.out.println("No elements to display..");
-        else if (head.next == null)
-            System.out.println(head.data);
-        else {
-            Node temp = head;
-            //  10==>20==>30==>40=> 50=>==>null
-            while (temp!= null) {
-                System.out.println(temp.data);
-                temp = temp.next;
-            }
-
-        }
-
-    }
+				temp = temp.next;
+			}
+		}
+	}
 
 }
-
-

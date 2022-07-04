@@ -1,16 +1,14 @@
 package com.blz.ds;
 
 public class LinkedListRunner {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
+		LinkedList linkedList = new LinkedList();
 
-        LinkedList linkedList = new LinkedList();
+		linkedList.addFirst(70);
+		linkedList.addFirst(30);
+		linkedList.addFirst(56);
+		linkedList.display();
 
-        linkedList.display();
-        linkedList.addLast(56);
-        linkedList.addLast(30);
-        linkedList.addLast(70);
+	}
 
-        linkedList.display();
-
-    }
 }
